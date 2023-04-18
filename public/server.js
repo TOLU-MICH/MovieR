@@ -5,7 +5,7 @@ const app = express();
 
 app.listen( PORT || 2078, () => console.log("listening at 2078"));
 
-app.use(express.static("public"));
+app.use(express.static("./"));
 app.use(express.json({ limit: "1mb" }));
 
 const apiKey = process.env.API_KEY;
