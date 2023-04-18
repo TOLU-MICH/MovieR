@@ -3,9 +3,10 @@ require("dotenv").config();
 
 const app = express();
 
-app.listen( PORT || 2078, () => console.log("listening at 2078"));
+const port = process.env.PORT || 2078;
+app.listen(port, () => console.log(`listening at ${port}`));
 
-app.use(express.static("./"));
+app.use(express.static("public"));
 app.use(express.json({ limit: "1mb" }));
 
 const apiKey = process.env.API_KEY;
